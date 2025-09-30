@@ -65,4 +65,44 @@ nuevos_nombres = pd.Series({
 s = pd.concat([s, nuevos_nombres])
 print(s)
 
+"""
+Dataframes
+La estructura estrella de pandas, es una tabla 2-D en donde:
+- Cada fila es una observacion(registro)
+- Cada columna es una variable(campo)
+y todo lleva etiquetas(nombre de filas y columnas)
+"""
 
+datos = {
+    'Nombre': [
+        'Adrian', 'Bea', 'Carlos', 'Diana', 'Eva', 
+        'Fernando', 'Gabriela', 'Hector', 'Ines', 'Javier'
+        ],
+    'Producto': [
+        'Pantalon', 'Camisa', 'Zapatos', 'Falda',
+        'Corbata', 'Cinturon', 'Sombrero', 'Bufanda', 'Guantes', 
+        'auriculares'
+        ],
+    'Categoria': ['Ropa', 'Ropa', 'Calzado', 'Ropa', 'Ropa', 
+                  'Accesorios', 'Accesorios', 'Accesorios', 'Accesorios', 'Accesorios'],
+    'Precio': [20, 15, 30, 25, 18, 12, 10, 22, 8, 14],
+    'Cantidad': [2, 3, 1, 4, 2, 5, 3, 2, 6, 4],
+    'Fecha': ['2024-01-15', '2024-01-16', '2024-01-17', '2024-01-18', '2024-01-19',
+              '2024-01-20', '2024-01-21', '2024-01-22', '2024-01-23', '2024-01-24'
+              ],
+    'Ciudad': ['Madrid', 'Barcelona', 'Valencia', 'Sevilla', 'Zaragoza',
+                'Malaga', 'Murcia', 'Palma', 'Bilbao', 'Alicante'
+                ],
+     'Satisfaccion': [4, 5, 3, 4, 5, 2, 4, 3, 5, 4] 
+}
+
+df = pd.DataFrame(datos)
+print(df)
+print(df.dtypes)    
+print("Mostramos la informacion del DataFrame")
+info = df.info()
+print(info)
+
+print("Mostramos la descripcion estadistica del DataFrame")
+descr = df.describe()
+print(descr)
